@@ -1,37 +1,24 @@
 # Debug-Challenge
 Fixed bugs in logistic regression notebook
 
-# Debug Challenge – Logistic Regression 
+Debug Challenge – Answers
 
-This repository contains a fixed version of a logistic regression notebook provided as part of a debugging challenge.
+1. What was the bug?
+The main issues were that y_test was generated as boolean values instead of integers, the learning rate was too high, and the cost function was numerically unstable due to log(0).
 
-# What Was Done
+2. How did you identify it?
+I identified the bug by observing unstable loss values and checking the datatype of y_test. I also noticed that the learning rate was too large and that the cost function could produce NaN values.
 
-The original notebook had multiple issues affecting training stability and evaluation.  
-I debugged and fixed the following:
+3. Why did it cause the specific problem?
+Boolean labels caused incorrect accuracy calculations, the high learning rate caused gradient descent to diverge, and log(0) produced numerical errors, leading to unstable training.
 
-- Converted `y_test` from boolean to integer labels
-- Reduced learning rate for stable gradient descent
-- Added epsilon to the cost function to avoid log(0) numerical errors
+4. What learning rate worked best?
+0.01
 
-#  Files
+5. What accuracy did you achieve?
+Train: ~55%
+Test: ~50%
 
-- `Debug_Challenge_Version_A_fixed.ipynb` – Corrected Jupyter notebook
-- `README.md` – Project documentation
 
-# Result
-
-After fixes:
-- Notebook runs without runtime errors
-- Loss becomes stable
-- Model trains correctly on synthetic data
-
-#Tech Stack
-
-- Python  
-- NumPy  
-- Jupyter Notebook  
-
-#  Author
 
 Nupur
